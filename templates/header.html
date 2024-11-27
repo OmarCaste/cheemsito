@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>Paquetería Cheems - Envíos nacionales e internacionales</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Paquetería Cheems - Envíos nacionales e internacionales" name="description" />
+        <meta content="Tu nombre" name="author" />
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/icons.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/cheems.css') }}">
+        <script src="{{ url_for('static', filename='js/plugin.js') }}"></script>
+ 
+
+    </head>
+
+    <body data-bs-spy="scroll" data-bs-target="#topnav-menu" data-bs-offset="60">
+
+        <nav class="navbar navbar-expand-lg navigation fixed-topf stigcky">
+            <div class="container">
+                <a class="navbar-logo">
+                    <img src="{{url_for('static', filename='images/cheems_logo.png')}}" alt="" height="32" class="logo logo-light">
+                </a>
+
+                <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+                    <i class="fa fa-fw fa-bars"></i>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="topnav-menu-content">
+                    <ul class="navbar-nav ms-auto" id="topnav-menu" >
+                        <li class="nav-item">
+                            <a class="nav-link font-size-15 text-dark" href="{{ url_for('index') }}">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-size-15 text-dark">Envíos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-size-15 text-dark" href="{{ url_for('ciudades') }}">Ciudad</a>
+                        </li>
+                         
+                    </ul>
+
+                    <div class="my-2 ms-lg-2">
+                        <a href="javascript: void(0);" class="btn btn-light ">Iniciar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </nav>

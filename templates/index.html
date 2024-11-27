@@ -1,0 +1,156 @@
+{% include 'header.html' %}
+<section class="section hero-section">
+    <div class="bg-overlay bg-primary back-presentation"></div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div>
+                    <h1 class="fw-semibold mb-3 hero-title">Rastrea tu envío</h1>
+                    <p class="font-size-14">Ingresa el número de rastreo para obtener la información del estado actual de tu paquete</p>
+                    <input type="text" class="form-control" id="searchList" autocomplete="off" placeholder="Ingresa los 10 dígitos de la guía">
+                    <div class="d-flex flex-wrap gap-2 mt-4">
+                        <a href="javascript: void(0);" class="btn btn-warning">Rastrear</a>
+                        <a href="javascript: void(0);" class="btn btn-light">Costos de envío</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-8 col-sm-10 ms-lg-auto">
+                <div class="card overflow-hidden mb-0 mt-5 mt-lg-0 cheems-presentation">
+                    <img src="{{url_for('static', filename='images/cheems_box.png')}}" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-white p-0">
+    <div class="container">
+        <div>
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mt-4 maintenance-box">
+                            <div class="card-body">
+                                <i class="bx bx-package mb-4 h1 text-warning"></i>
+                                <h5 class="font-size-15 text-uppercase">Envíos de paquetes</h5>
+                                <p class="text-muted mb-0">Envíos disponibles para el siguiente día, tanto importación y exportación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mt-4 maintenance-box">
+                            <div class="card-body">
+                                <i class="bx bx-timer mb-4 h1 text-warning"></i>
+                                <h5 class="font-size-15 text-uppercase">Servicios de logística</h5>
+                                <p class="text-muted mb-0">Transportación aérea, terrestre y marítima. Para todos lados.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mt-4 maintenance-box">
+                            <div class="card-body">
+                                <i class="bx bx-world mb-4 h1 text-warning"></i>
+                                <h5 class="font-size-15 text-uppercase">Envíos internacionales</h5>
+                                <p class="text-muted mb-0">Enviamos a todo el mundo. Desde Estados Unidos hasta Corea del Norte.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center mb-5">
+                    <div class="small-title">Nosotros</div>
+                    <h4>Conoce a nuestro equipo</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-start mb-3">
+                                <div class="flex-grow-1">
+                                    <span class="badge badge-soft-success">El más bonachón</span>
+                                </div>
+                            </div>
+                            <div class="text-center mb-3">
+                                <img src="{{ url_for('static', filename='images/team_01.jpg') }}" alt="" class="avatar-md rounded-circle" />
+                                <h6 class="font-size-15 mt-3 mb-1">Cheems</h6>
+                                <p class="mb-0 text-muted">Gerente general</p>
+                            </div>
+                            <div class="mt-4 pt-1">
+                                <a href="https://www.facebook.com/" target="_blank" class="btn btn-soft-success d-block">Ver perfil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-start mb-3">
+                                <div class="flex-grow-1">
+                                    <span class="badge badge-soft-info">El más calculador</span>
+                                </div>
+                            </div>
+                            <div class="text-center mb-3">
+                                <img src="{{ url_for('static', filename='images/team_02.jpg') }}" alt="" class="avatar-md rounded-circle" />
+                                <h6 class="font-size-15 mt-3 mb-1">Don Chemmpe</h6>
+                                <p class="mb-0 text-muted">Gerente de logística</p>
+                            </div>
+                            <div class="mt-4 pt-1">
+                                <a href="https://www.facebook.com/" target="_blank" class="btn btn-soft-success d-block">Ver perfil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-start mb-3">
+                                <div class="flex-grow-1">
+                                    <span class="badge badge-soft-danger">El que programa</span>
+                                </div>
+                            </div>
+                            <div class="text-center mb-3">
+                                <img src="{{ url_for('static', filename='images/team_03.jpg') }}" alt="" class="avatar-md rounded-circle" />
+                                <h6 class="font-size-15 mt-3 mb-1">Juan Nito</h6>
+                                <p class="mb-0 text-muted">Desarrollador de software</p>
+                            </div>
+                            <div class="mt-4 pt-1">
+                                <a href="https://www.facebook.com/" target="_blank" class="btn btn-soft-success d-block">Ver perfil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex align-start mb-3">
+                                <div class="flex-grow-1">
+                                    <span class="badge badge-soft-warning">El que tiene estilo</span>
+                                </div>
+                            </div>
+                            <div class="text-center mb-3">
+                                <img src="{{ url_for('static', filename='images/team_04.jpg') }}" alt="" class="avatar-md rounded-circle" />
+                                <h6 class="font-size-15 mt-3 mb-1">El Brayan</h6>
+                                <p class="mb-0 text-muted">Community Manager</p>
+                            </div>
+                            <div class="mt-4 pt-1">
+                                <a href="https://www.facebook.com/" target="_blank" class="btn btn-soft-success d-block">Ver perfil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'footer.html' %}
