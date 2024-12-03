@@ -1,0 +1,14 @@
+envio-table {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.envio-table th {
+    background-color: #ffc107;
+    color: #fff;
+    text-align: center;
+}
+
+.envio-table td {
+    text-align: center;
+}
