@@ -63,20 +63,9 @@ class Ciudad:
     def get_envios(cls):
         try:
             connection = get_db_connection()
-            cursor = connection.cursor()
-            cursor.execute( cursor.execute('''
-                SELECT 
-                    envio.idenvio AS envio_id, 
-                    envio.num_guia AS guia, 
-                    envio.fecha_envio AS fecha_hora, 
-                    origen.nombre AS ciudad_origen, 
-                    destino.nombre AS ciudad_destino 
-                FROM envio
-                INNER JOIN ciudad AS origen ON envio.idciudad_origen = origen.idciudad
-                INNER JOIN ciudad AS destino ON envio.idciudad_destino = destino.idciudad
-            '''))
-            connection.commit()
-            return cursor.rowcount
+            cursor = connection.cursor(dictionary=True)
+            cursor.execute('SELECT e.id, e.guia, e.fecha_hora, co.nombre AS ciudad_origen, cd.nombre AS ciudad_destino FROM envios e JOIN ciudad co ON e.ciudad_origen_id = co.idciudad JOIN ciudad cd ON e.ciudad_destino_id = cd.idciudad')
+            return cursor.fetchall()
         except Error as e:
             return str(e)
         finally:

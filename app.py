@@ -11,6 +11,11 @@ def index():
 def rastreo():
     return render_template('rastreo.html', rastreo= rastreo)
 
+@app.route('/envios', methods=['GET'])
+def get_envios():
+    envios = Ciudad.get_envios()
+    return render_template('envios.html', envios = envios)
+
 @app.route('/ciudades')
 def ciudades():
     ciudades = Ciudad.get_all()
@@ -40,12 +45,6 @@ def update(id):
     if result == 0:
         return jsonify({'error': 'El registro de ciudad no existe'}), 404
     return jsonify({'id': id}), 201
-
-@app.route('/envios')
-def envios():
-    envios = Ciudad.get_envios()  # Método dentro de la clase Ciudad
-    return render_template('envios.html', envios=envios)
-
 
 if __name__ == '__main__':
     app.run()
