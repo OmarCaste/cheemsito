@@ -7,6 +7,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/rastreo')
+def rastreo():
+    return render_template('rastreo.html', rastreo= rastreo)
+
 @app.route('/ciudades')
 def ciudades():
     ciudades = Ciudad.get_all()
