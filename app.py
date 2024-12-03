@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 from entities.ciudad import Ciudad
-#mensaje para confirmar el commit
+
 app = Flask(__name__)
 
 @app.route('/')
