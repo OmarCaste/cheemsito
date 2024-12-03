@@ -41,5 +41,11 @@ def update(id):
         return jsonify({'error': 'El registro de ciudad no existe'}), 404
     return jsonify({'id': id}), 201
 
+@app.route('/envios')
+def envios():
+    envios = Ciudad.get_envios()  # Método dentro de la clase Ciudad
+    return render_template('envios.html', envios=envios)
+
+
 if __name__ == '__main__':
     app.run()
