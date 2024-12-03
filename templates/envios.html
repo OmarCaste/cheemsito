@@ -1,0 +1,36 @@
+{% include 'header.html' %}
+<section class="section">
+    <div class="bg-overlay bg-primary back-presentation"></div>
+    <div class="container">
+        <h2 class="text-center text-warning">Lista de Envíos</h2>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID Envío</th>
+                        <th>Número de Guía</th>
+                        <th>Fecha y Hora</th>
+                        <th>Ciudad de Origen</th>
+                        <th>Ciudad de Destino</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for envio in envios %}
+                    <tr>
+                        <td>{{ envio.envio_id }}</td>
+                        <td>{{ envio.guia }}</td>
+                        <td>{{ envio.fecha_hora }}</td>
+                        <td>{{ envio.ciudad_origen }}</td>
+                        <td>{{ envio.ciudad_destino }}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="5" class="text-center">No hay envíos registrados.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% include 'footer.html' %}
