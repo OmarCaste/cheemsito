@@ -24,8 +24,7 @@ class Ciudad:
         try:
             connection = get_db_connection()
             cursor = connection.cursor()
-            cursor.execute('INSERT INTO ciudad (nombre, codigo) VALUES (%s, %s)',
-                           (ciudad.nombre, ciudad.codigo))
+            cursor.execute('INSERT INTO ciudad (nombre, codigo) VALUES (%s, %s)',(ciudad.nombre, ciudad.codigo))
             connection.commit()
             return cursor.lastrowid
         except Error as e:
@@ -39,8 +38,7 @@ class Ciudad:
         try:
             connection = get_db_connection()
             cursor = connection.cursor()
-            cursor.execute('UPDATE ciudad SET nombre = %s, codigo = %s WHERE id = %s', 
-                           (ciudad.nombre, ciudad.codigo, id))
+            cursor.execute('UPDATE ciudad SET nombre = %s, codigo = %s WHERE id = %s', (ciudad.nombre, ciudad.codigo, id))
             connection.commit()
             return cursor.rowcount
         except Error as e:
