@@ -53,7 +53,7 @@ class Ciudad:
         try:
             connection = get_db_connection()
             cursor = connection.cursor()
-            cursor.execute('DELETE ciudad From basededatos Where id = %s', (id))
+            cursor.execute('DELETE FROM ciudad WHERE id =%s', (id))
             connection.commit()
             return cursor.rowcount
         except Error as e:
