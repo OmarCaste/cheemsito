@@ -1,5 +1,5 @@
 .envio-table.table-striped > tbody > tr:nth-of-type(odd) {
-    background-color: #eaf1ff; /* Fondo para filas impares */
+    background-color: #eaf1ff;
 }
 .table.envio-table {
     background-color: #f9f9f9;
@@ -14,4 +14,20 @@
 
 .table.envio-table td {
     text-align: center;
+
+}
+.estado.procesado {
+    color: #531300;
+}
+
+.estado.enviado {
+    color: #ff0000;
+}
+
+.estado.entregado {
+    color: #28a745;
+}
+h2.text-warning {
+    font-size: 28px;
+    font-weight: 700;
 }

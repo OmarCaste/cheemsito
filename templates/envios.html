@@ -2,26 +2,26 @@
 <section class="section">
     <div class="bg-overlay bg-primary back-presentation"></div>
     <div class="container">
-        <h2 class="text-center text-warning">Lista de Envíos</h2>
+        <h2 class="text-center text-warning">ENVÍOS</h2>
         <div class="table-responsive">
             <table class="table envio-table table-striped">
                 <thead>
                     <tr>
-                        <th>ID Envío</th>
                         <th>Número de Guía</th>
                         <th>Fecha y Hora</th>
                         <th>Ciudad de Origen</th>
                         <th>Ciudad de Destino</th>
+                        <th>Estado</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for envio in envios %}
                     <tr>
-                        <td>{{ envio.id }}</td> 
                         <td>{{ envio.guia }}</td>
                         <td>{{ envio.fecha_hora }}</td>
                         <td>{{ envio.ciudad_origen }}</td>
                         <td>{{ envio.ciudad_destino }}</td>
+                        <td class="estado {{ envio.estado|lower }}">{{ envio.estado }}</td>
                     </tr>
                     {% else %}
                     <tr>
