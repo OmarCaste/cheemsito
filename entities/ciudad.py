@@ -64,7 +64,7 @@ class Ciudad:
         try:
             connection = get_db_connection()
             cursor = connection.cursor(dictionary=True)
-            cursor.execute('SELECT e.guia, e.fecha_hora, co.nombre AS ciudad_origen, cd.nombre AS ciudad_destino, e.estado FROM envios e JOIN ciudad co ON e.ciudad_origen_id = co.idciudad JOIN ciudad cd ON e.ciudad_destino_id = cd.idciudad')
+            cursor.execute('SELECT e.guia, e.fecha_hora, co.nombre AS ciudad_origen, cd.nombre AS ciudad_destino, e.estado FROM envios e JOIN ciudad co ON e.ciudad_origen_id = co.id JOIN ciudad cd ON e.ciudad_destino_id = cd.id')
             return cursor.fetchall()
         except Error as e:
             return str(e)
