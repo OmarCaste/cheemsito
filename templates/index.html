@@ -10,7 +10,7 @@
                     <input type="text" class="form-control" id="searchList" autocomplete="off" placeholder="Ingresa los 10 dígitos de la guía">
                     <div class="d-flex flex-wrap gap-2 mt-4">
                         <a href="javascript: void(0);" class="btn btn-warning">Rastrear</a>
-                        <a href="javascript: void(0);" class="btn btn-light">Costos de envío</a>
+                        <a href="{{ url_for('static', filename='docs/Costos envio.pdf') }}" class="btn btn-light" download> Costos de envío</a>
                     </div>
                 </div>
             </div>
