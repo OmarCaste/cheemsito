@@ -47,11 +47,11 @@ class Ciudad:
             cursor.close()
             connection.close()
     @classmethod
-    def delete(cls, id, ciudad):
+    def delete(cls, id):
         try:
             connection = get_db_connection()
             cursor = connection.cursor()
-            cursor.execute('DELETE FROM ciudad WHERE id =%s', (id))
+            cursor.execute("DELETE FROM ciudad WHERE id =%s", (id))
             connection.commit()
             return cursor.rowcount
         except Error as e:

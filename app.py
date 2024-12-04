@@ -16,6 +16,8 @@ def get_envios():
     envios = Ciudad.get_envios()
     return render_template('envios.html', envios = envios)
 
+
+
 @app.route('/ciudades')
 def ciudades():
     ciudades = Ciudad.get_all()
@@ -45,6 +47,20 @@ def update(id):
     if result == 0:
         return jsonify({'error': 'El registro de ciudad no existe'}), 404
     return jsonify({'id': id}), 201
+
+@app.route("/ciudad/eliminar/<int:id>", methods=["DELETE"])
+def eliminar_ciudad(id):
+    try:
+        resultado = Ciudad.delete(id)
+        if resultado > 0:
+            return jsonify({"message": "Ciudad eliminada exitosamente"}), 200
+        else:
+            return (
+                jsonify({"error": "No se encontró la ciudad con el ID proporcionado"}),
+                404,
+            )
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run()

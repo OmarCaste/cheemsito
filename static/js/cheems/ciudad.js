@@ -27,3 +27,23 @@ function save(){
     })
     .catch(error => console.error('Error:', error));
 }
+function eliminar(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar esta ciudad?")) {
+      fetch(/ciudad/eliminar/${id}, {
+        method: "DELETE",
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert("Ciudad eliminada exitosamente.");
+            location.reload(); // Recarga la página para reflejar los cambios
+          } else {
+            response.text().then((text) => {
+              alert("Error al eliminar: " + text);
+            });
+          }
+        })
+        .catch((error) => {
+          alert("Error al eliminar: " + error.message);
+        });
+    }
+  }
